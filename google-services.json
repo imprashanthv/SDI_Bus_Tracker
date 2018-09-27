@@ -1,0 +1,107 @@
+{
+  "project_info": {
+    "project_number": "419319573795",
+    "firebase_url": "https://sdibustracker.firebaseio.com",
+    "project_id": "sdibustracker",
+    "storage_bucket": "sdibustracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419319573795:android:ca5c9be5d00a69f6",
+        "android_client_info": {
+          "package_name": "dstudios.ml.sdibustracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419319573795-00i4m6modiaqc5hmdc08d9rmnogvd1ij.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dstudios.ml.sdibustracker",
+            "certificate_hash": "9ef814193056fe7d6105dc6b1da9faaaee738ff9"
+          }
+        },
+        {
+          "client_id": "419319573795-3qhbufg38ub9k6t2hqdb60ma6lqti5ts.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwThCRykX0zg3EMKeDA3Nlm6GiD7HVrPQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419319573795-uevukv2dl58ru76o5kk7h7hcp5i4qb26.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419319573795:android:6ac52924ef0c9c3f",
+        "android_client_info": {
+          "package_name": "ml.a3dstudios.sdibustracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419319573795-pcm65p0h7i5lg5gl0ld2hfre487km188.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ml.a3dstudios.sdibustracker",
+            "certificate_hash": "9ef814193056fe7d6105dc6b1da9faaaee738ff9"
+          }
+        },
+        {
+          "client_id": "419319573795-5dj6t39ugb6u4mtueuio458st8fmtmus.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "ml.a3dstudios.sdibustracker",
+            "certificate_hash": "dc9745e8f7f80afa749635208625ea8274372e22"
+          }
+        },
+        {
+          "client_id": "419319573795-3qhbufg38ub9k6t2hqdb60ma6lqti5ts.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwThCRykX0zg3EMKeDA3Nlm6GiD7HVrPQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "419319573795-uevukv2dl58ru76o5kk7h7hcp5i4qb26.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

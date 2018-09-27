@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SDI Bus Tracker</string>
+    <string name="title_activity_firebase">FirebaseActivity</string>
+</resources>

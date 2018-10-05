@@ -1,18 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
+    <android.support.v7.widget.CardView
+        android:layout_width="380dp"
+        android:layout_height="124dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="27dp"
+        android:scrollX="@dimen/cardview_default_radius"
+        android:scrollbarAlwaysDrawVerticalTrack="false"
+        app:cardCornerRadius="20dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="145dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/you_are_logged_in"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+
+    </android.support.v7.widget.CardView>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ScrollView>
+    <android.support.v7.widget.CardView
+        android:layout_width="380dp"
+        android:layout_height="193dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="174dp"
+        app:cardCornerRadius="16dp">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="299dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="115dp"
+            android:layout_marginTop="35dp"
+            android:text="@string/choose_an_activity_below"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/driverBtnId"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/button_background"
+            android:text="@string/driver"
+            android:textColor="@color/cardview_light_background" />
+
+        <Button
+            android:id="@+id/userBtnId"
+            android:layout_width="123dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="210dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/button_background"
+            android:text="@string/user"
+            android:textColor="@color/cardview_light_background" />
+    </android.support.v7.widget.CardView>
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/haloId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="17dp"
-        android:text="Signed in, you are in main activity"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="70dp"
+        android:fontFamily="sans-serif"
+        android:text="Halo!"
+        android:textAlignment="textStart"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="53dp"
+        android:background="@drawable/ic_location_city_black_24dp" />
+
+    <Button
+        android:id="@+id/signOutBtnId"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="55dp"
+        android:background="@drawable/button_background"
+        android:text="@string/sign_out"
+        android:textColor="@color/cardview_light_background" />
+
+</RelativeLayout>

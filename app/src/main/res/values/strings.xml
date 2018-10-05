@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">SDI Bus Tracker</string>
     <string name="title_activity_firebase">FirebaseActivity</string>
+    <string name="you_are_logged_in">You are Logged In</string>
+    <string name="choose_an_activity_below">Choose an Activity below</string>
+    <string name="driver">Driver</string>
+    <string name="user">User</string>
+    <string name="sign_out">Sign out</string>
+    <string name="title_activity_user">Map</string>
+    <string name="request_stop">Request Stop</string>
+    <string name="todo">TODO</string>
+    <string name="swipe_the_button_to_start_the_ride">Swipe the Button to Start the Ride</string>
+    <string name="_09_10">09:10</string>
 </resources>

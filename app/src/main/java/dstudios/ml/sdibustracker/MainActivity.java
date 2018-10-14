@@ -31,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
         final FirebaseAuth auth = FirebaseAuth.getInstance();
         if(auth.getCurrentUser()!=null){
             Log.d("Auth",auth.getCurrentUser().getEmail());
+            String name= auth.getCurrentUser().getDisplayName();
+            halo=findViewById(R.id.haloId);
+            halo.setText("Halo "+name+"!");
         }
         else {
             startActivityForResult(
@@ -42,9 +45,7 @@ public class MainActivity extends AppCompatActivity {
                             ).build(), RC_SIGN_IN);
         }
 
-        String name= auth.getCurrentUser().getDisplayName();
-        halo=findViewById(R.id.haloId);
-        halo.setText("Halo "+name+"!");
+
 
         signOutbtn=(Button) findViewById(R.id.signOutBtnId);
         driver =(Button)findViewById(R.id.driverBtnId);
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         driver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent driverActInt = new Intent(getApplicationContext(),layout_driver.class);
+                Intent driverActInt = new Intent(getApplicationContext(),MasterPassword.class);
                 startActivity(driverActInt);
             }
         });
@@ -75,4 +76,9 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }

@@ -11,4 +11,26 @@
     <string name="todo">TODO</string>
     <string name="swipe_the_button_to_start_the_ride">Swipe the Button to Start the Ride</string>
     <string name="_09_10">09:10</string>
+
+    <string name="numti">tel:8801099933</string>
+
+    <string-array name="drivernumbers">
+        <item>tel:</item>
+        <item>tel:</item>
+        <item>tel:</item>
+        <item>tel:9603609614</item>
+        <item>tel:</item>
+        <item>tel:9154311135</item>
+        <item>tel:</item>
+        <item>tel:</item>
+        <item>tel:</item>
+        <item>tel:</item>
+        <item>tel:</item>
+        <item>tel:</item>
+        <item>tel:</item>
+        <item>tel:</item>
+        <item>tel:</item>
+        <item>tel:</item>
+        <item>tel:</item>
+    </string-array>
 </resources>

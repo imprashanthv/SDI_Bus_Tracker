@@ -1,10 +1,22 @@
 package dstudios.ml.sdibustracker;
 
+import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.VectorDrawable;
+import android.net.Uri;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.MapStyleOptions;
 import com.sothree.slidinguppanel.SlidingUpPanelLayout;
 
 import com.google.android.gms.maps.CameraUpdate;
@@ -32,11 +44,16 @@ public class userActivity extends AppCompatActivity implements OnMapReadyCallbac
     float longitudinalPostion=0.00f;
     Marker marker;
     String routeNumber;
+    Button changeTheme;
+    Button driverCall, tiCall;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
+        changeTheme=findViewById(R.id.changethemeid);
+        driverCall=findViewById(R.id.drivercallid);
+        tiCall=findViewById(R.id.ticallid);
         init();
         Toast.makeText(getApplicationContext(),"onCreate Called", Toast.LENGTH_SHORT);
         dbref= FirebaseDatabase.getInstance().getReference(); //created reference
@@ -47,6 +64,25 @@ public class userActivity extends AppCompatActivity implements OnMapReadyCallbac
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        driverCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int rno = Integer.parseInt(routeNumber);
+                Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                callIntent.setData(Uri.parse(getResources().getStringArray(R.array.drivernumbers)[rno+1]));
+                startActivity(callIntent);
+            }
+        });
+
+        tiCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent callIntent = new Intent(Intent.ACTION_DIAL);
+                callIntent.setData(Uri.parse(getResources().getString(R.string.numti)));
+                startActivity(callIntent);
+            }
+        });
     }
 
     public void init(){
@@ -54,11 +90,41 @@ public class userActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     @Override
-    public void onMapReady(GoogleMap googleMap) {
+    public void onMapReady(final GoogleMap googleMap) {
+
+
         Toast.makeText(getApplicationContext(),"onMapReady called", Toast.LENGTH_SHORT);
         mMap = googleMap;
         /*Idea here is that... when data change is triggered.. we change the location of marker on the map*/
         //default sheriguda fixed
+        changeTheme.setOnClickListener(new View.OnClickListener() {
+            int i=0;
+            @Override
+            public void onClick(View view) {
+                if(i==4){
+                    i=0;
+                }
+                try {
+                    // Customise the styling of the base map using a JSON object defined
+                    // in a raw resource file.
+                    mMap = googleMap;
+
+                    int[] a={R.raw.mapstyle1,R.raw.mapstyle2,R.raw.mapstyle3,R.raw.mapstyle4,R.raw.mapstyle5};
+
+                    boolean success = googleMap.setMapStyle(
+                            MapStyleOptions.loadRawResourceStyle(getApplicationContext(),a[i]));
+
+                    if (!success) {
+                        Log.e("", "Style parsing failed.");
+                    }
+                    if(success){
+                        i++;
+                    }
+                } catch (Resources.NotFoundException e) {
+                    Log.e("", "Can't find style. Error: ", e);
+                }
+            }
+        });
         LatLng busLocation  = new LatLng(17.2102,78.6214);
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(busLocation, 16);
         //removing old marker... so that you won't see 100s of markers on single map
@@ -85,7 +151,7 @@ public class userActivity extends AppCompatActivity implements OnMapReadyCallbac
                 CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(busLocation, 16);
                 //removing old marker... so that you won't see 100s of markers on single map
                 mMap.clear();
-                mMap.addMarker(new MarkerOptions().position(busLocation).title("Your bus is here"));
+                mMap.addMarker(new MarkerOptions().position(busLocation).title("Your bus is here").icon(getBitmapDescriptor(R.drawable.busmarker)));
                 mMap.animateCamera(cameraUpdate);
             }
 
@@ -95,5 +161,25 @@ public class userActivity extends AppCompatActivity implements OnMapReadyCallbac
 
             }
         });
+    }
+
+    private BitmapDescriptor getBitmapDescriptor(int id) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            VectorDrawable vectorDrawable = (VectorDrawable) getDrawable(R.drawable.busmarker);
+
+            int h = vectorDrawable.getIntrinsicHeight();
+            int w = vectorDrawable.getIntrinsicWidth();
+
+            vectorDrawable.setBounds(0, 0, w, h);
+
+            Bitmap bm = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(bm);
+            vectorDrawable.draw(canvas);
+
+            return BitmapDescriptorFactory.fromBitmap(bm);
+
+        } else {
+            return BitmapDescriptorFactory.fromResource(id);
+        }
     }
 }

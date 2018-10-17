@@ -2,13 +2,17 @@ package dstudios.ml.sdibustracker;
 
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class layout_driver extends AppCompatActivity {
 
@@ -35,7 +39,16 @@ public class layout_driver extends AppCompatActivity {
                 "Route-16",
                 "Route-17"};
 
-        ListAdapter adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,routes);
+        ListAdapter adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,routes) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View view = super.getView(position, convertView, parent);
+                TextView tv = (TextView) view.findViewById(android.R.id.text1);
+                tv.setTextColor(Color.WHITE);
+                return view;
+            }
+        };
+
         ListView listView = findViewById(R.id.listViewId);
         listView.setAdapter(adapter);
 
@@ -43,16 +56,12 @@ public class layout_driver extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent driver = new Intent(getApplicationContext(),layout_driver_primary.class);
+                ActivityOptionsCompat compat = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                        layout_driver.this,findViewById(R.id.textView4),"routetotime");
                 driver.putExtra("routeno", i+1);
-                startActivity(driver);
+                startActivity(driver,compat.toBundle());
             }
         });
-
-
-
-
-
-
 
 
 

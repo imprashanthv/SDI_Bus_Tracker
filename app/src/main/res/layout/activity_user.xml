@@ -12,8 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:umanoClipPanel="true"
         app:umanoDragView="@drawable/background"
         app:umanoFlingVelocity="5"
@@ -46,65 +44,195 @@
                 android:layout_marginTop="50dp"
                 android:background="@drawable/button_background"
                 android:text="Change Theme"
-                android:textColor="@color/cardview_light_background" />
+                android:textColor="@color/cardview_light_background"
+                android:transitionName="user" />
 
-            <ScrollView
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="526dp"
+                android:layout_height="411dp"
                 android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true">
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/background"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="30dp">
 
-                <LinearLayout
+                <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_height="match_parent"
+                    android:background="@drawable/background">
 
                     <android.support.v7.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:id="@+id/cardView2"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="16dp"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="20dp"
+                        app:layout_constraintBottom_toTopOf="@+id/cardView4"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView3">
 
-                </LinearLayout>
-            </ScrollView>
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="87dp"
-                android:layout_marginTop="230dp"
-                android:text="Call Driver"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textColor="@android:color/white" />
+                            <TextView
+                                android:id="@+id/textView8"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="Provide Driver Feedback"
+                                android:textAlignment="center"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginBottom="272dp"
-                android:layout_marginStart="94dp"
-                android:text="Call Transport Incharge"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                android:textColor="@android:color/white" />
+                            <EditText
+                                android:id="@+id/editText"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:ems="10"
+                                android:inputType="textMultiLine"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </android.support.constraint.ConstraintLayout>
+                    </android.support.v7.widget.CardView>
 
-            <Button
-                android:id="@+id/drivercallid"
-                android:layout_width="42dp"
-                android:layout_height="36dp"
-                android:layout_alignTop="@+id/textView5"
-                android:layout_toStartOf="@+id/changethemeid"
-                android:background="@drawable/ic_telephone_handle_silhouette" />
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardView3"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="33dp"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="20dp"
+                        app:layout_constraintBottom_toTopOf="@+id/cardView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
 
-            <Button
-                android:id="@+id/ticallid"
-                android:layout_width="42dp"
-                android:layout_height="36dp"
-                android:layout_alignBaseline="@+id/textView6"
-                android:layout_toStartOf="@+id/changethemeid"
-                android:background="@drawable/ic_telephone_handle_silhouette" />
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_constraintBottom_toTopOf="@+id/ticallid"
+                            app:layout_constraintTop_toTopOf="@+id/ticallid">
+
+                            <TextView
+                                android:id="@+id/textView5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_marginBottom="1dp"
+                                android:layout_marginEnd="229dp"
+                                android:layout_marginTop="9dp"
+                                android:text="Call Driver"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                                android:textColor="@android:color/black"
+                                app:layout_constraintBottom_toTopOf="@+id/textView6"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/drivercallid"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/textView6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginEnd="147dp"
+                                android:text="Call Transport Incharge"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                                android:textColor="@android:color/black"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/ticallid"
+                                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+                            <Button
+                                android:id="@+id/drivercallid"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_alignTop="@+id/textView5"
+                                android:layout_marginBottom="22dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginStart="24dp"
+                                android:layout_marginTop="41dp"
+                                android:background="@drawable/ic_telephone_handle_silhouette"
+                                app:layout_constraintBottom_toTopOf="@+id/ticallid"
+                                app:layout_constraintEnd_toStartOf="@+id/textView5"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <Button
+                                android:id="@+id/ticallid"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_alignBaseline="@+id/textView6"
+                                android:layout_marginBottom="21dp"
+                                android:layout_marginEnd="12dp"
+                                android:layout_marginStart="24dp"
+                                android:background="@drawable/ic_telephone_handle_silhouette"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/textView6"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/drivercallid" />
+                        </android.support.constraint.ConstraintLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardView4"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="6dp"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="20dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/textView9"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
+                                android:text="Provide App Feedback"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <EditText
+                                android:id="@+id/editText2"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginTop="4dp"
+                                android:ems="10"
+                                android:inputType="textMultiLine"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </android.support.constraint.ConstraintLayout>
+                    </android.support.v7.widget.CardView>
+                </android.support.constraint.ConstraintLayout>
+
+            </android.support.v7.widget.CardView>
 
         </RelativeLayout>
 

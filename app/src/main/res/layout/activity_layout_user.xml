@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/overlay"
+    android:background="@drawable/background"
     tools:context=".layout_user">
 
     <TextView
@@ -17,6 +17,8 @@
         android:paddingBottom="3dp"
         android:text="Select Your Route Number"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="@android:color/white"
+        android:transitionName="user"
         app:layout_constraintBottom_toTopOf="@+id/listViewUser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

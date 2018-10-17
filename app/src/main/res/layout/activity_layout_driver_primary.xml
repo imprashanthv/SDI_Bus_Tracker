@@ -64,7 +64,8 @@
         android:textAlignment="center"
         android:textColor="@color/cardview_light_background"
         android:textSize="18sp"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:transitionName="routetotime"/>
 
     <TextView
         android:id="@+id/rideid"

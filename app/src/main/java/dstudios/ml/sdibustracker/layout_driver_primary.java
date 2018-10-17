@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
@@ -102,12 +103,14 @@ public class layout_driver_primary extends AppCompatActivity implements GoogleAp
                     cn.start();
                     isChronometerRunning=!isChronometerRunning;
                     Toast.makeText(getApplicationContext(),"Ride started", Toast.LENGTH_SHORT).show();
+                    FirebaseDatabase.getInstance().goOnline();
                 }
                 else{
                     cn.stop();
                     isChronometerRunning=!isChronometerRunning;
                     timeWhenStopped = cn.getBase() - SystemClock.elapsedRealtime();
                     Toast.makeText(getApplicationContext(),"Ride stopped", Toast.LENGTH_SHORT).show();
+                    FirebaseDatabase.getInstance().goOffline();
                 }
             }
         });

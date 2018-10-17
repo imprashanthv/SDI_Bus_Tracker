@@ -13,6 +13,11 @@
     <string name="_09_10">09:10</string>
 
     <string name="numti">tel:8801099933</string>
+    <string name="one_more">We just need one more thing to go!</string>
+    <string name="submit">Submit</string>
+    <string name="enter_master_password">Enter Master Password</string>
+    <string name="driver_activity">Driver Activity</string>
+    <string name="enter_password">Enter Password</string>
 
     <string-array name="drivernumbers">
         <item>tel:</item>

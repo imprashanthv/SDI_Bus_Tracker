@@ -78,12 +78,14 @@
                 android:background="@drawable/button_background"
                 android:text="@string/driver"
                 android:textColor="@color/cardview_light_background"
+                android:transitionName="driver"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.769" />
+                app:layout_constraintVertical_bias="0.769"
+                />
 
             <Button
                 android:id="@+id/userBtnId"
@@ -93,6 +95,7 @@
                 android:background="@drawable/button_background"
                 android:text="@string/user"
                 android:textColor="@color/cardview_light_background"
+                android:transitionName="user"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -110,8 +113,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginTop="31dp"
         android:fontFamily="sans-serif"
         android:text="Halo!"
         android:textAlignment="textStart"
@@ -122,10 +125,9 @@
         android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:layout_alignEnd="@+id/weatherid"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="30dp"
-        android:layout_marginTop="53dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/ic_location_city_black_24dp" />
 
     <Button
@@ -138,5 +140,16 @@
         android:background="@drawable/button_background"
         android:text="@string/sign_out"
         android:textColor="@color/cardview_light_background" />
+
+    <TextView
+        android:id="@+id/weatherid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="129dp"
+        android:text="Weather looks good today"
+        android:textColor="@android:color/white" />
 
 </RelativeLayout>

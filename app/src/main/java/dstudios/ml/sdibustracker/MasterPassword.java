@@ -1,7 +1,7 @@
 package dstudios.ml.sdibustracker;
 
 import android.content.Intent;
-import android.graphics.Color;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -26,8 +26,10 @@ public class MasterPassword extends AppCompatActivity {
                 try {
                     if (masterpass == 159753) {
                         Intent driverActInt = new Intent(getApplicationContext(), layout_driver.class);
-                        startActivity(driverActInt);
-                    } else {
+                        ActivityOptionsCompat compat = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                                MasterPassword.this,findViewById(R.id.masterpasswordid),"driverroute");
+                        startActivity(driverActInt,compat.toBundle());
+                    }else {
                         mp.clearComposingText();
                         mp.setText("");
                         mp.setHint("Please try again");
@@ -38,7 +40,6 @@ public class MasterPassword extends AppCompatActivity {
                 }catch(Exception e){
                     mp.setText("");
                     mp.setHint("Please try again");
-                    mp.setHintTextColor(Color.WHITE);
                 }
             }
         });

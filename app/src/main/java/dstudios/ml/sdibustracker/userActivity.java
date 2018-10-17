@@ -101,7 +101,7 @@ public class userActivity extends AppCompatActivity implements OnMapReadyCallbac
             int i=0;
             @Override
             public void onClick(View view) {
-                if(i==4){
+                if(i==5){
                     i=0;
                 }
                 try {

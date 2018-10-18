@@ -26,6 +26,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import  java.util.Date;
 import java.util.List;
 
@@ -55,6 +57,7 @@ public class layout_driver_primary extends AppCompatActivity implements GoogleAp
     public double longitude;
     public String routeNumber;
     int routenum;
+    TextView date;
     private DatabaseReference dbref;
     Chronometer cn;
     boolean isChronometerRunning = false;
@@ -80,6 +83,12 @@ public class layout_driver_primary extends AppCompatActivity implements GoogleAp
         setContentView(R.layout.activity_layout_driver_primary);
 
         //declarations
+        date=findViewById(R.id.dateId);
+        Date c = Calendar.getInstance().getTime();
+        SimpleDateFormat df = new SimpleDateFormat("dd MMMM yyyy | EEEE");
+        String todayDate = df.format(c);
+        date.setText(todayDate);
+
         DigitalClock dc = (DigitalClock)findViewById(R.id.clock);
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         ride = (SwipeButton)findViewById(R.id.button_create);

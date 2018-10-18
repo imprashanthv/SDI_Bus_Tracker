@@ -9,9 +9,13 @@
 
     <com.sothree.slidinguppanel.SlidingUpPanelLayout
         android:id="@+id/slidingUpPanelLayoutId"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:gravity="bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:umanoClipPanel="true"
         app:umanoDragView="@drawable/background"
         app:umanoFlingVelocity="5"
@@ -29,11 +33,14 @@
             tools:context=".userActivity" />
 
         <RelativeLayout
+            android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:context=".userActivity"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="0dp">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:context=".userActivity">
 
             <Button
                 android:id="@+id/changethemeid"
@@ -82,15 +89,30 @@
                                 android:id="@+id/textView8"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginEnd="51dp"
+                                android:layout_marginStart="105dp"
                                 android:layout_marginTop="16dp"
                                 android:text="Provide Driver Feedback"
                                 android:textAlignment="center"
                                 app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/feedbackdriverid"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
+                            <Button
+                                android:id="@+id/feedbackdriverid"
+                                android:layout_width="0dp"
+                                android:layout_height="44dp"
+                                android:layout_marginTop="4dp"
+                                android:background="@drawable/button_background"
+                                android:text="@string/fui_button_text_send"
+                                android:textColor="@color/cardview_light_background"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/textView8"
+                                app:layout_constraintTop_toTopOf="@+id/drivereditid" />
+
                             <EditText
-                                android:id="@+id/editText"
+                                android:id="@+id/drivereditid"
                                 android:layout_width="0dp"
                                 android:layout_height="0dp"
                                 android:ems="10"
@@ -125,67 +147,91 @@
                             <TextView
                                 android:id="@+id/textView5"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_height="0dp"
                                 android:layout_alignParentStart="true"
                                 android:layout_alignParentTop="true"
-                                android:layout_marginBottom="1dp"
-                                android:layout_marginEnd="229dp"
-                                android:layout_marginTop="9dp"
+                                android:layout_marginBottom="6dp"
+                                android:layout_marginEnd="224dp"
+                                android:layout_marginTop="30dp"
                                 android:text="Call Driver"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                                 android:textColor="@android:color/black"
-                                app:layout_constraintBottom_toTopOf="@+id/textView6"
+                                app:layout_constraintBottom_toTopOf="@+id/divider2"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.5"
-                                app:layout_constraintStart_toEndOf="@+id/drivercallid"
+                                app:layout_constraintStart_toEndOf="@+id/divider3"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
                                 android:id="@+id/textView6"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_height="35dp"
                                 android:layout_alignParentBottom="true"
                                 android:layout_alignParentStart="true"
-                                android:layout_marginEnd="147dp"
+                                android:layout_marginBottom="8dp"
+                                android:layout_marginEnd="142dp"
                                 android:text="Call Transport Incharge"
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-                                android:textColor="@android:color/black"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.5"
-                                app:layout_constraintStart_toEndOf="@+id/ticallid"
-                                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                                app:layout_constraintStart_toEndOf="@+id/divider3"
+                                app:layout_constraintTop_toBottomOf="@+id/divider2" />
 
                             <Button
                                 android:id="@+id/drivercallid"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
                                 android:layout_alignTop="@+id/textView5"
-                                android:layout_marginBottom="22dp"
-                                android:layout_marginEnd="12dp"
-                                android:layout_marginStart="24dp"
-                                android:layout_marginTop="41dp"
+                                android:layout_marginBottom="3dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginStart="30dp"
+                                android:layout_marginTop="30dp"
                                 android:background="@drawable/ic_telephone_handle_silhouette"
-                                app:layout_constraintBottom_toTopOf="@+id/ticallid"
-                                app:layout_constraintEnd_toStartOf="@+id/textView5"
+                                app:layout_constraintBottom_toTopOf="@+id/divider2"
+                                app:layout_constraintEnd_toStartOf="@+id/divider3"
                                 app:layout_constraintHorizontal_bias="0.5"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <Button
                                 android:id="@+id/ticallid"
-                                android:layout_width="20dp"
-                                android:layout_height="20dp"
+                                android:layout_width="22dp"
+                                android:layout_height="22dp"
                                 android:layout_alignBaseline="@+id/textView6"
-                                android:layout_marginBottom="21dp"
-                                android:layout_marginEnd="12dp"
-                                android:layout_marginStart="24dp"
+                                android:layout_marginBottom="27dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginStart="30dp"
                                 android:background="@drawable/ic_telephone_handle_silhouette"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toStartOf="@+id/textView6"
+                                app:layout_constraintEnd_toStartOf="@+id/divider3"
                                 app:layout_constraintHorizontal_bias="0.5"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/drivercallid" />
+                                app:layout_constraintTop_toBottomOf="@+id/divider2" />
+
+                            <View
+                                android:id="@+id/divider2"
+                                android:layout_width="0dp"
+                                android:layout_height="1dp"
+                                android:background="?android:attr/listDivider"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="0.504" />
+
+                            <View
+                                android:id="@+id/divider3"
+                                android:layout_width="1dp"
+                                android:layout_height="0dp"
+                                android:layout_marginEnd="8dp"
+                                android:background="?android:attr/listDivider"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/textView5"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/drivercallid"
+                                app:layout_constraintTop_toTopOf="parent" />
+
                         </android.support.constraint.ConstraintLayout>
                     </android.support.v7.widget.CardView>
 
@@ -210,14 +256,28 @@
                                 android:id="@+id/textView9"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginEnd="57dp"
+                                android:layout_marginStart="110dp"
                                 android:layout_marginTop="16dp"
                                 android:text="Provide App Feedback"
                                 app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/feedbackappid"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
+                            <Button
+                                android:id="@+id/feedbackappid"
+                                android:layout_width="0dp"
+                                android:layout_height="44dp"
+                                android:background="@drawable/button_background"
+                                android:text="@string/fui_button_text_send"
+                                android:textColor="@color/cardview_light_background"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/textView9"
+                                app:layout_constraintTop_toTopOf="@+id/appeditid" />
+
                             <EditText
-                                android:id="@+id/editText2"
+                                android:id="@+id/appeditid"
                                 android:layout_width="0dp"
                                 android:layout_height="0dp"
                                 android:layout_marginBottom="4dp"

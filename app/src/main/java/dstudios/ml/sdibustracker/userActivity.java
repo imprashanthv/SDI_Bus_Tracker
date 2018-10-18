@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.model.BitmapDescriptor;
@@ -46,6 +47,8 @@ public class userActivity extends AppCompatActivity implements OnMapReadyCallbac
     String routeNumber;
     Button changeTheme;
     Button driverCall, tiCall;
+    Button driverfeedback, appfeedback;
+    EditText driveredit, appedit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +84,26 @@ public class userActivity extends AppCompatActivity implements OnMapReadyCallbac
                 Intent callIntent = new Intent(Intent.ACTION_DIAL);
                 callIntent.setData(Uri.parse(getResources().getString(R.string.numti)));
                 startActivity(callIntent);
+            }
+        });
+
+        driveredit = findViewById(R.id.drivereditid);
+        driverfeedback = findViewById(R.id.feedbackdriverid);
+        driverfeedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                driveredit.setText("");
+                Toast.makeText(userActivity.this,"Thanks for submitting feedback",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        appedit = findViewById(R.id.appeditid);
+        appfeedback = findViewById(R.id.feedbackappid);
+        appfeedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                appedit.setText("");
+                Toast.makeText(userActivity.this,"Thanks for submitting feedback",Toast.LENGTH_SHORT).show();
             }
         });
     }

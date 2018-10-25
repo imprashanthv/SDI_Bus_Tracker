@@ -41,13 +41,9 @@ public class userActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private GoogleMap mMap;
     private DatabaseReference dbref;
-    float latitudinalPosition=0.00f;
-    float longitudinalPostion=0.00f;
-    Marker marker;
+    float latitudinalPosition=0.00f, longitudinalPostion=0.00f;
     String routeNumber;
-    Button changeTheme;
-    Button driverCall, tiCall;
-    Button driverfeedback, appfeedback;
+    Button changeTheme, driverCall, tiCall, driverfeedback, appfeedback;
     EditText driveredit, appedit;
 
     @Override
@@ -59,7 +55,7 @@ public class userActivity extends AppCompatActivity implements OnMapReadyCallbac
         tiCall=findViewById(R.id.ticallid);
         init();
         Toast.makeText(getApplicationContext(),"onCreate Called", Toast.LENGTH_SHORT);
-        dbref= FirebaseDatabase.getInstance().getReference(); //created reference
+        dbref= FirebaseDatabase.getInstance().getReference();
         Bundle b = getIntent().getExtras();
         int routeno=b.getInt("routeno");
         routeNumber = String.valueOf(routeno);
@@ -119,7 +115,7 @@ public class userActivity extends AppCompatActivity implements OnMapReadyCallbac
         Toast.makeText(getApplicationContext(),"onMapReady called", Toast.LENGTH_SHORT);
         mMap = googleMap;
         /*Idea here is that... when data change is triggered.. we change the location of marker on the map*/
-        //default sheriguda fixed
+        //default location is sheriguda
         changeTheme.setOnClickListener(new View.OnClickListener() {
             int i=0;
             @Override
@@ -177,7 +173,6 @@ public class userActivity extends AppCompatActivity implements OnMapReadyCallbac
                 mMap.addMarker(new MarkerOptions().position(busLocation).title("Your bus is here").icon(getBitmapDescriptor(R.drawable.busmarker)));
                 mMap.animateCamera(cameraUpdate);
             }
-
 
             @Override
             public void onCancelled(DatabaseError databaseError) {

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".layout_driver_primary">
+
+    <com.ebanx.swipebtn.SwipeButton
+        android:id="@+id/button_create"
+        android:layout_width="wrap_content"
+        android:layout_height="87dp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="204dp"
+        android:backgroundTint="@color/colorAccent"
+        android:elevation="5dp"
+        android:foregroundTint="@android:color/holo_blue_dark"
+        android:soundEffectsEnabled="?android:attr/windowSwipeToDismiss"
+        app:button_bottom_padding="13dp"
+        app:button_image_disabled="@drawable/ic_navigate_next_black_24dp"
+        app:button_image_enabled="@drawable/ic_mood_black_24dp"
+        app:button_left_padding="13dp"
+        app:button_right_padding="13dp"
+        app:button_top_padding="13dp"
+        app:inner_text="Start Ride"
+        app:inner_text_bottom_padding="15dp"
+        app:inner_text_size="20dp"
+        app:inner_text_top_padding="15dp" />
+
+    <DigitalClock
+        android:id="@+id/clock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="85sp"
+        android:transitionName="routetotime" />
+
+    <TextView
+        android:id="@+id/dateId"
+        android:layout_width="367dp"
+        android:layout_height="52dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="146dp"
+        android:fontFamily="sans-serif"
+        android:text="1 September 2018 | Wednesday"
+        android:textAlignment="center"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/locId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="260dp"
+        android:text="Swipe right to start ride"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="18sp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/rideid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="132dp"
+        android:text="Ride Time"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:visibility="visible" />
+
+    <Chronometer
+        android:id="@+id/chronometerid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="62dp"
+        android:textColor="@android:color/white"
+        android:textSize="45sp"
+        android:visibility="visible">
+
+    </Chronometer>
+
+</RelativeLayout>
